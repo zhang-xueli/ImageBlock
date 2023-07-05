@@ -1,0 +1,17 @@
+name: build for backend
+on:
+  push:
+    branches: ["main"]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: check out
+      uses: actions/checkout@v3
+    - name: Build the solution
+      uses: cake-build/cake-action@v1
+      with:
+        cake-version: tool-manifest
+    
+  
